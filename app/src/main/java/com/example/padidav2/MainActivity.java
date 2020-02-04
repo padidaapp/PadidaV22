@@ -24,7 +24,8 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
 
-public class RegisterActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
+    private static final String TAG = "";
     private EditText Name, Password,Roll_no,Email_ID;
     private Button SignUpBtn;
     private TextView SignInRedirector;
@@ -42,10 +43,28 @@ public class RegisterActivity extends AppCompatActivity {
         SignInRedirector =(TextView) findViewById(R.id.Signinredirect);
         Loading_Bar = new ProgressDialog(this);
 
+        DatabaseReference myRef = FirebaseDatabase.getInstance().getReference("users");
+
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                String value = dataSnapshot.getValue(String.class);
+                Log.d(TAG, "Value is: " + value);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w(MainActivity.TAG, "Failed to read value.", error.toException());
+            }
+        });
+
         SignInRedirector.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(RegisterActivity.this,Dashboard.class);
+                Intent intent = new Intent(MainActivity.this,Dashboard.class);
                 startActivity(intent);
             }
         });
@@ -119,15 +138,15 @@ public class RegisterActivity extends AppCompatActivity {
                                 {
                                     if (task.isSuccessful())
                                     {
-                                        Toast.makeText(RegisterActivity.this, "Account Created!", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(MainActivity.this, "Account Created!", Toast.LENGTH_SHORT).show();
                                         Loading_Bar.dismiss();
 
-                                        Intent intent = new Intent(RegisterActivity.this,Dashboard.class);
+                                        Intent intent = new Intent(MainActivity.this,Dashboard.class);
                                         startActivity(intent);
                                     }
                                     else{
                                         Loading_Bar.dismiss();
-                                        Toast.makeText(RegisterActivity.this, "Account Not Created! Sorry", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(MainActivity.this, "Account Not Created! Sorry", Toast.LENGTH_SHORT).show();
                                     }
 
                                 }
@@ -137,11 +156,11 @@ public class RegisterActivity extends AppCompatActivity {
 
                 else
                 {
-                    Toast.makeText(RegisterActivity.this, "This roll number " + user_roll + " already exists.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "This roll number " + user_roll + " already exists.", Toast.LENGTH_SHORT).show();
                     Loading_Bar.dismiss();
-                    Toast.makeText(RegisterActivity.this, "Please try using different roll number.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Please try using different roll number.", Toast.LENGTH_SHORT).show();
 
-                    Intent intent = new Intent(RegisterActivity.this,Dashboard.class);
+                    Intent intent = new Intent(MainActivity.this,Dashboard.class);
                     startActivity(intent);
                 }
 
@@ -156,6 +175,5 @@ public class RegisterActivity extends AppCompatActivity {
 
 
     }
-
 
 }
