@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "376673476146",
+    "firebase_url": "https://padidav2.firebaseio.com",
+    "project_id": "padidav2",
+    "storage_bucket": "padidav2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:376673476146:android:9882c0ee1987c7b380262b",
+        "android_client_info": {
+          "package_name": "com.example.padidav2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "376673476146-dpavm37j0senbr9rm07blm4ga84n5p7s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.padidav2",
+            "certificate_hash": "8fdbe727828529c2589a359186a2feba72b79eb0"
+          }
+        },
+        {
+          "client_id": "376673476146-7ph50sb3h52clnuj4pe4shfk9f809s35.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUEIEsZzMouJbal0lVqK-yjYb_fOMmajk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "376673476146-7ph50sb3h52clnuj4pe4shfk9f809s35.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
