@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
         SignInRedirector.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,Dashboard.class);
+                Intent intent = new Intent(MainActivity.this,loginactivity.class);
                 startActivity(intent);
             }
         });
@@ -126,8 +126,8 @@ public class MainActivity extends AppCompatActivity {
                 if (!(dataSnapshot.child("Users").child(user_roll).exists()))
                 {
                     HashMap<String,Object> userdatamap = new HashMap<>();
-                    userdatamap.put("Roll no",user_roll);
-                    userdatamap.put("password",user_pass);
+                    userdatamap.put("Roll_no",user_roll);
+                    userdatamap.put("Password",user_pass);
                     userdatamap.put("Name",user_name);
                     userdatamap.put("email",user_email);
 

@@ -2,18 +2,17 @@ package com.example.padidav2.Model;
 
 public class Users
 {
-    private String Name, Password,Roll_no,Email_ID;
+    public String Name,Password,Roll_no,email;
 
     public Users()
     {
 
     }
-
     public Users(String name, String password, String roll_no, String email_ID) {
         Name = name;
         Password = password;
         Roll_no = roll_no;
-        Email_ID = email_ID;
+        email = email_ID;
     }
 
     public String getName() {
@@ -41,10 +40,10 @@ public class Users
     }
 
     public String getEmail_ID() {
-        return Email_ID;
+        return email;
     }
 
     public void setEmail_ID(String email_ID) {
-        Email_ID = email_ID;
+        email = email_ID;
     }
 }

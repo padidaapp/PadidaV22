@@ -11,7 +11,7 @@
         android:id="@+id/MainSignupBtn"
         android:layout_width="120dp"
         android:layout_height="40dp"
-        android:background="@drawable/input_field"
+        android:background="@drawable/btnfield"
         android:fontFamily="@font/gothamlight"
         android:text="SIGNUP"
         android:textColor="@color/purple"
