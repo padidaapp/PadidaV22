@@ -85,7 +85,9 @@ public class UploadActivity extends AppCompatActivity {
     {
         if(imgUrl!=null)
         {
-            StorageReference fileref = mstorageRef.child(System.currentTimeMillis()+"."+getFilesExtn(imgUrl));
+            StorageReference filereference = mstorageRef.child(System.currentTimeMillis()+"."+getFilesExtn(imgUrl));
+
+            mUploadTask.filereference
         }
     }
 
