@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private Button SignUpBtn;
     private TextView SignInRedirector;
     private ProgressDialog Loading_Bar;
+    public static String User_Roll;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
         SignUpBtn =(Button) findViewById(R.id.MainSignupBtn);
         SignInRedirector =(TextView) findViewById(R.id.Signinredirect);
         Loading_Bar = new ProgressDialog(this);
+
+        Toast.makeText(this, "Vanakkam Da Mapla!", Toast.LENGTH_SHORT).show();
 
         DatabaseReference myRef = FirebaseDatabase.getInstance().getReference("users");
 
@@ -81,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
     private void CreateAccount()
     {
         String User_name = Name.getText().toString();
-        String User_Roll = Roll_no.getText().toString();
+        User_Roll = Roll_no.getText().toString();
         String User_Email = Email_ID.getText().toString();
         String User_Pass = Password.getText().toString();
 
@@ -113,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void ValidateRollNo(final String user_name, final String user_roll, final String user_pass, final String user_email)
+    public void ValidateRollNo(final String user_name, final String user_roll, final String user_pass, final String user_email)
     {
 
         final DatabaseReference RootRef;

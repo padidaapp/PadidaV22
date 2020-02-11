@@ -1,22 +1,20 @@
 package com.example.padidav2;
 
 public class Upload {
-    private String imgName, imgUrl;
+    private String bookname, imgUrl;
 
-    public Upload() {
-    }
 
     public Upload(String imgName, String imgUrl) {
-        this.imgName = imgName;
+        this.bookname = imgName;
         this.imgUrl = imgUrl;
     }
 
     public String getImgName() {
-        return imgName;
+        return bookname;
     }
 
     public void setImgName(String imgName) {
-        this.imgName = imgName;
+        this.bookname = imgName;
     }
 
     public String getImgUrl() {
